@@ -1,3 +1,4 @@
+
 import time
 global balanceJack, balanceSatan, balanceSnoop, balanceLandfried, balanceSteve, balanceBarack, balanceTrump, name, egg
 balanceSatan = 666666
@@ -30,12 +31,12 @@ def atm():
                     balancenew += int(deposit)
                     newb()
                 elif action == 'Withdraw' or action == 'withdraw':
-                    print 'How much would you like to deposit?'
+                    print 'How much would you like to withdraw?'
                     withdraw = raw_input('Withdraw:')
-                    if withdraw < balancenew:
+                    if int(withdraw) < balancenew:
                         balancenew -= int(withdraw)
                         newb()
-                    elif withdraw > balancenew:
+                    elif int(withdraw) > int(balancenew):
                         print 'Sorry insufficient funds.'
                         newb()
                     else:
@@ -47,9 +48,9 @@ def atm():
                     if who == 'jack' or who == 'Jack':
                         print 'How much would you like to transfer to jack.'
                         money = raw_input('Enter Amount:')
-                        if money < balancenew:
-                            balancenew -= money
-                            balanceJack += money
+                        if int(money) < int(balancenew):
+                            balancenew -= int(money)
+                            balanceJack += int(money)
                             print money, 'has been transferred to jacks account'
                             print 'Your current balance is', balancenew
                             newb()
@@ -154,6 +155,7 @@ def atm():
                 else:
                     print 'Unknown Command'
                     newb()
+            newb()
         else:
             print 'Welcome to Champion National Bank.'
             print 'To start a new account enter your name.'
@@ -178,9 +180,9 @@ def atm():
                         balancenew += int(deposit)
                         newa()
                     elif action == 'Withdraw' or action == 'withdraw':
-                        print 'How much would you like to deposit?'
+                        print 'How much would you like to withdraw?'
                         withdraw = raw_input('Withdraw:')
-                        if withdraw < balancenew:
+                        if int(withdraw) < int(balancenew):
                             balancenew -= int(withdraw)
                             newa()
                         elif withdraw > balancenew:
@@ -195,7 +197,7 @@ def atm():
                         if who == 'jack' or who == 'Jack':
                             print 'How much would you like to transfer to jack.'
                             money = raw_input('Enter Amount:')
-                            if money < balancenew:
+                            if int(money) < int(balancenew):
                                 balancenew -= money
                                 balanceJack += money
                                 print money, 'has been transferred to jacks account'
@@ -1215,6 +1217,8 @@ def atm():
         old()
     elif oldornew == 'New' or oldornew == 'new':
         new()
+    elif oldornew == 'exit' or oldornew == 'e':
+        print 'k'
     else:
         print 'Unknown command'
         atm()
