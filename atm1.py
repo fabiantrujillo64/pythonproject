@@ -11,6 +11,12 @@ balancenew = 0
 name = []
 egg = 'false'
    
+def inv():
+    print 'Invalid input'
+
+def options():
+    print ('\'Balance\' to see your balance, \'Deposit\' to deposit more money, \'Withdraw\' to witdraw money,')
+    print ('\"deposit\" to deposit, \"exit\" to exit, or \"transfer\" to transfer' )
 
 def atm(): 
     def new():
@@ -18,8 +24,7 @@ def atm():
         if egg == 'true':
             def newb():
                 global balancenew, balanceJack, balanceSatan, balanceSnoop, balanceLandfried, balanceSteve, balanceObama, balanceTrump, egg
-                print 'Type \'Balance\' to see your balance, \'Deposit\' to deposit more money, \'Withdraw\' to withdraw money'
-                print '\"Transfer\" to transfer money, or \"Exit\" to exit.'
+                options()
                 action = raw_input(name)
                 if action == 'Balance' or action == 'balance':
                     print 'Your balance is', balancenew
@@ -46,7 +51,7 @@ def atm():
                     who = raw_input('Enter Name:')
                     if who == 'jack' or who == 'Jack':
                         print 'How much would you like to transfer to jack.'
-                        money = raw_input('Enter Amount:')
+                        money = int(raw_input('Enter Amount:'))
                         if int(money) < int(balancenew):
                             balancenew -= int(money)
                             balanceJack += int(money)
@@ -61,7 +66,7 @@ def atm():
                             newb()
                     elif who == 'satan' or who == 'Satan':
                         print 'How much would you like to transfer to satan.'
-                        money = raw_input('Enter Amount:')
+                        money = int(raw_input('Enter Amount:'))
                         if money < balancenew:
                             balancenew -= money
                             balanceSatan += money
@@ -76,7 +81,7 @@ def atm():
                             newb()
                     elif who == 'snoop' or who == 'Snoop':
                         print 'How much would you like to transfer to snoop.'
-                        money = raw_input('Enter Amount:')
+                        money = int(raw_input('Enter Amount:'))
                         if money < balancenew:
                             balancenew -= money
                             balanceSnoop += money
@@ -91,7 +96,7 @@ def atm():
                             newb()
                     elif who == 'landfried' or who == 'Landfried':
                         print 'How much would you like to transfer to landfried.'
-                        money = raw_input('Enter Amount:')
+                        money = int(raw_input('Enter Amount:'))
                         if money < balancenew:
                             balancenew -= money
                             balanceLandfried += money
@@ -106,7 +111,7 @@ def atm():
                             newb()
                     elif who == 'steve' or who == 'Steve':
                         print 'How much would you like to transfer to steve.'
-                        money = raw_input('Enter Amount:')
+                        money = int(raw_input('Enter Amount:'))
                         if money < balancenew:
                             balancenew -= money
                             balanceSteve += money
@@ -121,7 +126,7 @@ def atm():
                             newb()
                     elif who == 'obama' or who == 'Obama':
                         print 'How much would you like to transfer to obama.'
-                        money = raw_input('Enter Amount:')
+                        money = int(raw_input('Enter Amount:'))
                         if money < balancenew:
                             balancenew -= money
                             balanceObama += money
@@ -136,7 +141,7 @@ def atm():
                             newb()
                     elif who == 'trump' or who == 'Trump':
                         print 'How much would you like to transfer to trump.'
-                        money = raw_input('Enter Amount:')
+                        money = int(raw_input('Enter Amount:'))
                         if money < balancenew:
                             balancenew -= money
                             balanceTrump += money
@@ -195,10 +200,10 @@ def atm():
                         who = raw_input('Enter Name:')
                         if who == 'jack' or who == 'Jack':
                             print 'How much would you like to transfer to jack.'
-                            money = raw_input('Enter Amount:')
-                            if int(money) < int(balancenew):
-                                balancenew -= money
-                                balanceJack += money
+                            money = int(raw_input('Enter Amount:'))
+                            if money < balancenew:
+                                balancenew -= int(money)
+                                balanceJack += int(money)
                                 print money, 'has been transferred to jacks account'
                                 print 'Your current balance is', balancenew
                                 newa()
@@ -210,7 +215,7 @@ def atm():
                                 newa()
                         elif who == 'satan' or who == 'Satan':
                             print 'How much would you like to transfer to satan.'
-                            money = raw_input('Enter Amount:')
+                            money = int(raw_input('Enter Amount:'))
                             if money < balancenew:
                                 balancenew -= money
                                 balanceSatan += money
@@ -225,7 +230,7 @@ def atm():
                                 newa()
                         elif who == 'snoop' or who == 'Snoop':
                             print 'How much would you like to transfer to snoop.'
-                            money = raw_input('Enter Amount:')
+                            money = int(raw_input('Enter Amount:'))
                             if money < balancenew:
                                 balancenew -= money
                                 balanceSnoop += money
@@ -240,7 +245,7 @@ def atm():
                                 newa()
                         elif who == 'landfried' or who == 'Landfried':
                             print 'How much would you like to transfer to landfried.'
-                            money = raw_input('Enter Amount:')
+                            money = int(raw_input('Enter Amount:'))
                             if money < balancenew:
                                 balancenew -= money
                                 balanceLandfried += money
@@ -255,7 +260,7 @@ def atm():
                                 newa()
                         elif who == 'steve' or who == 'Steve':
                             print 'How much would you like to transfer to steve.'
-                            money = raw_input('Enter Amount:')
+                            money = int(raw_input('Enter Amount:'))
                             if money < balancenew:
                                 balancenew -= money
                                 balanceSteve += money
@@ -270,7 +275,7 @@ def atm():
                                 newa()
                         elif who == 'obama' or who == 'Obama':
                             print 'How much would you like to transfer to obama.'
-                            money = raw_input('Enter Amount:')
+                            money = int(raw_input('Enter Amount:'))
                             if money < balancenew:
                                 balancenew -= money
                                 balanceObama += money
@@ -285,7 +290,7 @@ def atm():
                                 newa()
                         elif who == 'trump' or who == 'Trump':
                             print 'How much would you like to transfer to trump.'
-                            money = raw_input('Enter Amount:')
+                            money = int(raw_input('Enter Amount:'))
                             if money < balancenew:
                                 balancenew -= money
                                 balanceTrump += money
@@ -323,8 +328,8 @@ def atm():
                     print 'Welcome Jack Trudeau'
                     def Jack():
                         global balanceJack, balanceSatan, balanceSnoop, balanceLandfried, balanceSteve, balanceObama, balanceTrump
-                        print ('Type \"balance\" to view your balance, \"withdraw\" to withdraw money,')
-                        print ('\"deposit\" to deposit, \"exit\" to exit, or \"transfer\" to transfer' )
+                        options()
+                        
                         action = raw_input('Jack: ')
                         if action == "balance":
                             print 'Your total balance is $', balanceJack 
@@ -355,7 +360,7 @@ def atm():
                                     print 'You do not have enough money for this transfer.'
                                     Jack()
                                 elif money < 0:
-                                    print 'Invalid input'
+                                    inv()
                                     Jack()
                                 else:
                                     balanceJack -= money
@@ -370,7 +375,7 @@ def atm():
                                     print 'You do not have enough money for this transfer.'
                                     Jack()
                                 elif money < 0:
-                                    print 'Invalid input'
+                                    inv()
                                     Jack()
                                 else:
                                     balanceJack -= money
@@ -385,7 +390,7 @@ def atm():
                                     print 'You do not have enough money for this transfer.'
                                     Jack()
                                 elif money < 0:
-                                    print 'Invalid input'
+                                    inv()
                                     Jack()
                                 else:
                                     balanceJack -= money
@@ -400,7 +405,7 @@ def atm():
                                     print 'You do not have enough money for this transfer.'
                                     Jack()
                                 elif money < 0:
-                                    print 'Invalid input'
+                                    inv()
                                     Jack()
                                 else:
                                     balanceJack -= money
@@ -415,7 +420,7 @@ def atm():
                                     print 'You do not have enough money for this transfer.'
                                     Jack()
                                 elif money < 0:
-                                    print 'Invalid input'
+                                    inv()
                                     Jack()
                                 else:
                                     balanceJack -= money
@@ -430,7 +435,7 @@ def atm():
                                     print 'You do not have enough money for this transfer.'
                                     Jack()
                                 elif money < 0:
-                                    print 'Invalid input'
+                                    inv()
                                     Jack()
                                 else:
                                     balanceJack -= money
@@ -449,8 +454,8 @@ def atm():
                     print 'Welcome Satan'
                     def Satan():
                         global balanceJack, balanceSatan, balanceSnoop, balanceLandfried, balanceSteve, balanceObama, balanceTrump
-                        print ('Type \"balance\" to view your balance, \"withdraw\" to withdraw money,')
-                        print ('\"deposit\" to deposit, \"exit\" to exit, or \"transfer\" to transfer' )
+                        options()
+                        
                         action = raw_input('Satan: ')
                         if action == "balance":
                             print 'Your total balance is $', balanceSatan 
@@ -481,7 +486,7 @@ def atm():
                                     print 'You do not have enough money for this transfer.'
                                     Satan()
                                 elif money < 0:
-                                    print 'Invalid input'
+                                    inv()
                                     Satan()
                                 else:
                                     balanceSatan -= money
@@ -496,7 +501,7 @@ def atm():
                                     print 'You do not have enough money for this transfer.'
                                     Satan()
                                 elif money < 0:
-                                    print 'Invalid input'
+                                    inv()
                                     Satan()
                                 else:
                                     balanceSatan -= money
@@ -511,7 +516,7 @@ def atm():
                                     print 'You do not have enough money for this transfer.'
                                     Satan()
                                 elif money < 0:
-                                    print 'Invalid input'
+                                    inv()
                                     Satan()
                                 else:
                                     balanceSatan -= money
@@ -526,7 +531,7 @@ def atm():
                                     print 'You do not have enough money for this transfer.'
                                     Satan()
                                 elif money < 0:
-                                    print 'Invalid input'
+                                    inv()
                                     Satan()
                                 else:
                                     balanceSatan -= money
@@ -541,7 +546,7 @@ def atm():
                                     print 'You do not have enough money for this transfer.'
                                     Satan()
                                 elif money < 0:
-                                    print 'Invalid input'
+                                    inv()
                                     Satan()
                                 else:
                                     balanceSatan -= money
@@ -556,7 +561,7 @@ def atm():
                                     print 'You do not have enough money for this transfer.'
                                     Satan()
                                 elif money < 0:
-                                    print 'Invalid input'
+                                    inv()
                                     Satan()
                                 else:
                                     balanceSatan -= money
@@ -575,8 +580,8 @@ def atm():
                     print 'Welcome Snoop Dogg'
                     def Snoop():
                         global balanceJack, balanceSatan, balanceSnoop, balanceLandfried, balanceSteve, balanceObama, balanceTrump
-                        print ('Type \"balance\" to view your balance, \"withdraw\" to withdraw money,')
-                        print ('\"deposit\" to deposit, \"exit\" to exit, or \"transfer\" to transfer' )
+                        options()
+                        
                         action = raw_input('Snoop: ')
                         if action == "balance":
                             print 'Your total balance is $', balanceSnoop 
@@ -607,7 +612,7 @@ def atm():
                                     print 'You do not have enough money for this transfer.'
                                     Snoop()
                                 elif money < 0:
-                                    print 'Invalid input'
+                                    inv()
                                     Snoop()
                                 else:
                                     balanceSnoop -= money
@@ -622,7 +627,7 @@ def atm():
                                     print 'You do not have enough money for this transfer.'
                                     Snoop()
                                 elif money < 0:
-                                    print 'Invalid input'
+                                    inv()
                                     Snoop()
                                 else:
                                     balanceSnoop -= money
@@ -637,7 +642,7 @@ def atm():
                                     print 'You do not have enough money for this transfer.'
                                     Snoop()
                                 elif money < 0:
-                                    print 'Invalid input'
+                                    inv()
                                     Snoop()
                                 else:
                                     balanceSnoop -= money
@@ -652,7 +657,7 @@ def atm():
                                     print 'You do not have enough money for this transfer.'
                                     Snoop()
                                 elif money < 0:
-                                    print 'Invalid input'
+                                    inv()
                                     Snoop()
                                 else:
                                     balanceSnoop -= money
@@ -667,7 +672,7 @@ def atm():
                                     print 'You do not have enough money for this transfer.'
                                     Snoop()
                                 elif money < 0:
-                                    print 'Invalid input'
+                                    inv()
                                     Snoop()
                                 else:
                                     balanceSnoop -= money
@@ -682,7 +687,7 @@ def atm():
                                     print 'You do not have enough money for this transfer.'
                                     Snoop()
                                 elif money < 0:
-                                    print 'Invalid input'
+                                    inv()
                                     Snoop()
                                 else:
                                     balanceSnoop -= money
@@ -701,8 +706,8 @@ def atm():
                     print 'Welcome Landfried'
                     def Landfried():
                         global balanceJack, balanceSatan, balanceSnoop, balanceLandfried, balanceSteve, balanceObama, balanceTrump
-                        print ('Type \"balance\" to view your balance, \"withdraw\" to withdraw money,')
-                        print ('\"deposit\" to deposit, \"exit\" to exit, or \"transfer\" to transfer' )
+                        options()
+                        
                         action = raw_input('Landfried: ')
                         if action == "balance":
                             print 'Your total balance is $', balanceLandfried
@@ -733,7 +738,7 @@ def atm():
                                     print 'You do not have enough money for this transfer.'
                                     Landfried()
                                 elif money < 0:
-                                    print 'Invalid input'
+                                    inv()
                                     Landfried()
                                 else:
                                     balanceLandfried -= money
@@ -748,7 +753,7 @@ def atm():
                                     print 'You do not have enough money for this transfer.'
                                     Landfried()
                                 elif money < 0:
-                                    print 'Invalid input'
+                                    inv()
                                     Landfried()
                                 else:
                                     balanceLandfried -= money
@@ -763,7 +768,7 @@ def atm():
                                     print 'You do not have enough money for this transfer.'
                                     Landfried()
                                 elif money < 0:
-                                    print 'Invalid input'
+                                    inv()
                                     Landfried()
                                 else:
                                     balanceLandfried -= money
@@ -778,7 +783,7 @@ def atm():
                                     print 'You do not have enough money for this transfer.'
                                     Jack()
                                 elif money < 0:
-                                    print 'Invalid input'
+                                    inv()
                                     Jack()
                                 else:
                                     balanceJack -= money
@@ -793,7 +798,7 @@ def atm():
                                     print 'You do not have enough money for this transfer.'
                                     Jack()
                                 elif money < 0:
-                                    print 'Invalid input'
+                                    inv()
                                     Jack()
                                 else:
                                     balanceJack -= money
@@ -808,7 +813,7 @@ def atm():
                                     print 'You do not have enough money for this transfer.'
                                     Jack()
                                 elif money < 0:
-                                    print 'Invalid input'
+                                    inv()
                                     Jack()
                                 else:
                                     balanceJack -= money
@@ -827,8 +832,8 @@ def atm():
                     print 'Welcome Steve Buschemi'
                     def Steve():
                         global balanceJack, balanceSatan, balanceSnoop, balanceLandfried, balanceSteve, balanceObama, balanceTrump
-                        print ('Type \"balance\" to view your balance, \"withdraw\" to withdraw money,')
-                        print ('\"deposit\" to deposit, \"exit\" to exit, or \"transfer\" to transfer' )
+                        options()
+                        
                         action = raw_input('Steve: ')
                         if action == "balance":
                             print 'Your total balance is $', balanceSteve
@@ -859,7 +864,7 @@ def atm():
                                     print 'You do not have enough money for this transfer.'
                                     Steve()
                                 elif money < 0:
-                                    print 'Invalid input'
+                                    inv()
                                     Steve()
                                 else:
                                     balanceSteve -= money
@@ -874,7 +879,7 @@ def atm():
                                     print 'You do not have enough money for this transfer.'
                                     Steve()
                                 elif money < 0:
-                                    print 'Invalid input'
+                                    inv()
                                     Steve()
                                 else:
                                     balanceSteve -= money
@@ -889,7 +894,7 @@ def atm():
                                     print 'You do not have enough money for this transfer.'
                                     Steve()
                                 elif money < 0:
-                                    print 'Invalid input'
+                                    inv()
                                     Steve()
                                 else:
                                     balanceSteve -= money
@@ -904,7 +909,7 @@ def atm():
                                     print 'You do not have enough money for this transfer.'
                                     Steve()
                                 elif money < 0:
-                                    print 'Invalid input'
+                                    inv()
                                     Steve()
                                 else:
                                     balanceSteve -= money
@@ -919,7 +924,7 @@ def atm():
                                     print 'You do not have enough money for this transfer.'
                                     Steve()
                                 elif money < 0:
-                                    print 'Invalid input'
+                                    inv()
                                     Steve()
                                 else:
                                     balanceSteve -= money
@@ -934,7 +939,7 @@ def atm():
                                     print 'You do not have enough money for this transfer.'
                                     Steve()
                                 elif money < 0:
-                                    print 'Invalid input'
+                                    inv()
                                     Steve()
                                 else:
                                     balanceSteve -= money
@@ -953,8 +958,8 @@ def atm():
                     print 'Welcome Barack Obama'
                     def Obama():
                         global balanceJack, balanceSatan, balanceSnoop, balanceLandfried, balanceSteve, balanceObama, balanceTrump
-                        print ('Type \"balance\" to view your balance, \"withdraw\" to withdraw money,')
-                        print ('\"deposit\" to deposit, \"exit\" to exit, or \"transfer\" to transfer' )
+                        options()
+                        
                         action = raw_input('Obama: ')
                         if action == "balance":
                             print 'Your total balance is $', balanceObama
@@ -985,7 +990,7 @@ def atm():
                                     print 'You do not have enough money for this transfer.'
                                     Obama()
                                 elif money < 0:
-                                    print 'Invalid input'
+                                    inv()
                                     Obama()
                                 else:
                                     balanceObama -= money
@@ -1000,7 +1005,7 @@ def atm():
                                     print 'You do not have enough money for this transfer.'
                                     Obama()
                                 elif money < 0:
-                                    print 'Invalid input'
+                                    inv()
                                     Obama()
                                 else:
                                     balanceObama -= money
@@ -1015,7 +1020,7 @@ def atm():
                                     print 'You do not have enough money for this transfer.'
                                     Obama()
                                 elif money < 0:
-                                    print 'Invalid input'
+                                    inv()
                                     Obama()
                                 else:
                                     balanceObama -= money
@@ -1030,7 +1035,7 @@ def atm():
                                     print 'You do not have enough money for this transfer.'
                                     Obama()
                                 elif money < 0:
-                                    print 'Invalid input'
+                                    inv()
                                     Obama()
                                 else:
                                     balanceObama -= money
@@ -1045,7 +1050,7 @@ def atm():
                                     print 'You do not have enough money for this transfer.'
                                     Obama()
                                 elif money < 0:
-                                    print 'Invalid input'
+                                    inv()
                                     Obama()
                                 else:
                                     balanceObama -= money
@@ -1060,7 +1065,7 @@ def atm():
                                     print 'You do not have enough money for this transfer.'
                                     Obama()
                                 elif money < 0:
-                                    print 'Invalid input'
+                                    inv()
                                     Obama()
                                 else:
                                     balanceObama -= money
@@ -1079,8 +1084,8 @@ def atm():
                     print 'Welcome Donald Trump'
                     def Trump():
                         global balanceJack, balanceSatan, balanceSnoop, balanceLandfried, balanceSteve, balanceObama, balanceTrump
-                        print ('Type \"balance\" to view your balance, \"withdraw\" to withdraw money,')
-                        print ('\"deposit\" to deposit, \"exit\" to exit, or \"transfer\" to transfer' )
+                        options()
+                        
                         action = raw_input('Donald: ')
                         if action == "balance":
                             print 'Your total balance is $', balanceTrump 
@@ -1111,7 +1116,7 @@ def atm():
                                     print 'You do not have enough money for this transfer.'
                                     Trump()
                                 elif money < 0:
-                                    print 'Invalid input'
+                                    inv()
                                     Trump()
                                 else:
                                     balanceTrump -= money
@@ -1126,7 +1131,7 @@ def atm():
                                     print 'You do not have enough money for this transfer.'
                                     Trump()
                                 elif money < 0:
-                                    print 'Invalid input'
+                                    inv()
                                     Trump()
                                 else:
                                     balanceTrump -= money
@@ -1141,7 +1146,7 @@ def atm():
                                     print 'You do not have enough money for this transfer.'
                                     Trump()
                                 elif money < 0:
-                                    print 'Invalid input'
+                                    inv()
                                     Trump()
                                 else:
                                     balanceTrump -= money
@@ -1156,7 +1161,7 @@ def atm():
                                     print 'You do not have enough money for this transfer.'
                                     Trump()
                                 elif money < 0:
-                                    print 'Invalid input'
+                                    inv()
                                     Trump()
                                 else:
                                     balanceTrump -= money
@@ -1171,7 +1176,7 @@ def atm():
                                     print 'You do not have enough money for this transfer.'
                                     Trump()
                                 elif money < 0:
-                                    print 'Invalid input'
+                                    inv()
                                     Trump()
                                 else:
                                     balanceTrump -= money
@@ -1186,7 +1191,7 @@ def atm():
                                     print 'You do not have enough money for this transfer.'
                                     Trump()
                                 elif money < 0:
-                                    print 'Invalid input'
+                                    inv()
                                     Trump()
                                 else:
                                     balanceTrump -= money
@@ -1221,4 +1226,3 @@ def atm():
     else:
         print 'Unknown command'
         atm()
-atm()
