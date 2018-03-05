@@ -1,4 +1,3 @@
-
 import time
 global balanceJack, balanceSatan, balanceSnoop, balanceLandfried, balanceSteve, balanceBarack, balanceTrump, name, egg
 balanceSatan = 666666
@@ -21,7 +20,7 @@ def atm():
                 global balancenew, balanceJack, balanceSatan, balanceSnoop, balanceLandfried, balanceSteve, balanceObama, balanceTrump, egg
                 print 'Type \'Balance\' to see your balance, \'Deposit\' to deposit more money, \'Withdraw\' to withdraw money'
                 print '\"Transfer\" to transfer money, or \"Exit\" to exit.'
-                action = raw_input('Jack:')
+                action = raw_input(name)
                 if action == 'Balance' or action == 'balance':
                     print 'Your balance is', balancenew
                     newb()
@@ -32,7 +31,7 @@ def atm():
                     newb()
                 elif action == 'Withdraw' or action == 'withdraw':
                     print 'How much would you like to withdraw?'
-                    withdraw = raw_input('Withdraw:')
+                    withdraw = int(raw_input('Withdraw:'))
                     if int(withdraw) < balancenew:
                         balancenew -= int(withdraw)
                         newb()
@@ -159,8 +158,8 @@ def atm():
         else:
             print 'Welcome to Champion National Bank.'
             print 'To start a new account enter your name.'
-            name = raw_input('Name:')
-            print 'Welcome', name
+            name = raw_input('Name:') + ":"
+            print 'Welcome', name[0:6]
             print 'You currently have 0 dollars in your account, deposit some money to open your account.'
             deposit = int(raw_input('Deposit:'))
             if deposit > 0:
@@ -170,7 +169,7 @@ def atm():
                     global balancenew, balanceJack, balanceSatan, balanceSnoop, balanceLandfried, balanceSteve, balanceObama, balanceTrump
                     print 'Type \'Balance\' to see your balance, \'Deposit\' to deposit more money, \'Withdraw\' to withdraw money'
                     print '\"Transfer\" to transfer, or \"Exit\" to exit.'
-                    action = raw_input('Jack:')
+                    action = raw_input(name)
                     if action == 'Balance' or action == 'balance':
                         print 'Your balance is', balancenew
                         newa()
@@ -1222,3 +1221,4 @@ def atm():
     else:
         print 'Unknown command'
         atm()
+atm()
